@@ -70,7 +70,7 @@ function getSympt(symptoms) {
 }
 
 function triageResult() {
-    var innerHTMLString = '<table class="pure-table pure-table-bordered">\
+    var innerHTMLString = '<table class="pure-table pure-table-bordered" style="background-color: #ffffff; margin: auto; position: relative; top: 50%; transform: translateY(-50%);">\
                             <thead>\
                             <tr>\
                                 <th>Diagnostics Table</th>\
@@ -78,13 +78,12 @@ function triageResult() {
                         </thead>\
                         <tbody>\
                         ' 
-
     for (var i = 0; i<diagnosis.length; i++) {
         if (i == diagnosis.length - 1) {
             innerHTMLString += '<tr> <td> ' + diagnosis[i] + '</td></tr> </tbody> </table>'; 
         }
         else {
-            innerHTMLString += "<tr><td>" + i + ") " + diagnosis[i] + "</td></tr>"; 
+            innerHTMLString += '<tr><td>' + (i + 1) + ") " + diagnosis[i] + "</td></tr>"; 
         }
     }
     var element = document.getElementById('modalBack');
@@ -92,3 +91,4 @@ function triageResult() {
     var element2 = document.getElementById('myModal');
     element2.innerHTML = innerHTMLString;
 }
+
